@@ -5,5 +5,5 @@ Init file for the src folder
 '''
 
 from .ev_algorithm import EA
-from .evolutionary_operators import crossover, mutation
-from .functions import ZDT3, CF6
+from .evolutionary_operators import gaussian_mutation
+from .problems import ZDT3, CF6

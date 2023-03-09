@@ -20,7 +20,8 @@ class ZDT3:
         return individual[0]
 
     def f2(self, individual):
-        g = 1 + 9 * np.sum(individual[1:]) / (self.dimension - 1)
+        g = 1 + (9 / (self.dimension - 1)) * np.sum(individual[1:]) 
+
         h = 1 - np.sqrt(self.f1(individual) / g) - (self.f1(individual) / g) * np.sin(10 * np.pi * self.f1(individual))
         return g * h
 
@@ -37,8 +38,8 @@ class ZDT3:
             search_space[i][1] = 1
         return search_space
     
-    def g(self, individual, ref_point):
-        return max(self.f1(individual) - ref_point[0], self.f2(individual) - ref_point[1])
+    def g(self, individual, weight_vector, ref_point):
+        return weight_vector[np.argmax(self.fitness(individual) - ref_point)]
     
     def plot_ideal_front(self):
 
@@ -50,6 +51,23 @@ class ZDT3:
         plt.scatter(x, f, color='blue')
         plt.show()
     
+    def plot_function(self):
+        # Create 100 individuals of self.dimension
+        population = np.zeros((1000, self.dimension))
+        f1 = np.zeros(1000)
+        f2 = np.zeros(1000)
+
+        x = np.zeros(self.dimension)
+        print('f1', self.f1(x))
+        print('f2', self.f2(x))
+        for i in range(1000):
+            for j in range(self.dimension):
+                population[i][j] = np.random.uniform(self.search_space[j][0], self.search_space[j][1])
+                
+            f1[i] = self.f1(population[i])
+            f2[i] = self.f2(population[i])
+        
+        plt.scatter(f1, f2, color='blue')
 
 class CF6:
 
@@ -58,9 +76,8 @@ class CF6:
         self.dimension = dimension
         self.search_space = self.create_search_space()
 
-    def f1(self, x):
-        
-        pass 
+    def f1(self, individual):
+        pass
 
     def f2(self, individual):
         pass
