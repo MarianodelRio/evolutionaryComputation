@@ -16,20 +16,16 @@ class ZDT3:
         self.search_space = self.create_search_space()
         self.num_functions = 2
 
-    def f1(self, individual):
-        return individual[0]
+    def f1(self, x):
+        return x[0]
 
-    def f2(self, individual):
-        g = 1 + (9 / (self.dimension - 1)) * np.sum(individual[1:]) 
-
-        h = 1 - np.sqrt(self.f1(individual) / g) - (self.f1(individual) / g) * np.sin(10 * np.pi * self.f1(individual))
+    def f2(self, x):
+        g = 1 + (9 / (self.dimension - 1)) * np.sum(x[1:]) 
+        h = 1 - np.sqrt(self.f1(x) / g) - (self.f1(x) / g) * np.sin(10 * np.pi * self.f1(x))
         return g * h
 
     def fitness(self, individual):
         return np.array([self.f1(individual), self.f2(individual)])
-    
-    def restrictions(self, individual):
-        return False
     
     def create_search_space(self):
         search_space = np.zeros((self.dimension, 2))
@@ -43,23 +39,18 @@ class ZDT3:
     
     def plot_ideal_front(self):
 
-        x = np.concatenate((np.linspace(0, 0.0830015349, 100), np.linspace(0.1822287280, 0.2577623634, 100) ,np.linspace(0.4093136748, 0.4538821041, 100), np.linspace(0.6183967944, 0.6525117038, 100), np.linspace(0.8233317983, 0.8518328654, 100)), axis=0)
+        f1 = np.concatenate((np.linspace(0, 0.0830015349, 100), np.linspace(0.1822287280, 0.2577623634, 100) ,np.linspace(0.4093136748, 0.4538821041, 100), np.linspace(0.6183967944, 0.6525117038, 100), np.linspace(0.8233317983, 0.8518328654, 100)), axis=0)
         
-        f = 1 - np.sqrt(x) - x * np.sin(10 * np.pi * x)
+        f2 = 1 - np.sqrt(f1) - f1 * np.sin(10 * np.pi * f1)
 
-
-        plt.scatter(x, f, color='blue')
+        plt.scatter(f1, f2, color='blue')
         plt.show()
     
     def plot_function(self):
-        # Create 100 individuals of self.dimension
-        population = np.zeros((1000, self.dimension))
-        f1 = np.zeros(1000)
-        f2 = np.zeros(1000)
+        population = np.zeros((100, self.dimension))
+        f1 = np.zeros(100)
+        f2 = np.zeros(100)
 
-        x = np.zeros(self.dimension)
-        print('f1', self.f1(x))
-        print('f2', self.f2(x))
         for i in range(1000):
             for j in range(self.dimension):
                 population[i][j] = np.random.uniform(self.search_space[j][0], self.search_space[j][1])
@@ -75,13 +66,30 @@ class CF6:
         self.name = 'CF6'
         self.dimension = dimension
         self.search_space = self.create_search_space()
+        self.num_functions = 2
 
-    def f1(self, individual):
-        pass
+    def f1(self, x):
+        j1 = [j for j in range(2, self.dimension) if j % 2 != 0]
+        yj1 = [x[j] - 0.8*x[0]*np.cos(6*np.pi*x[0] + j*np.pi/self.dimension) for j in j1]
+        return x[0] + np.sum(np.power(yj1, 2))
 
-    def f2(self, individual):
-        pass
+    def f2(self, x):
+        j2 = [j for j in range(2, self.dimension) if j % 2 == 0]
+        yj2 = [x[j] - 0.8*x[0]*np.sin(6*np.pi*x[0] + j*np.pi/self.dimension) for j in j2]
+        return np.power(1-x[0], 2) + np.sum(np.power(yj2, 2))
 
+    def constraints(self, x):
+        c1 = x[1] - 0.8*x[0]*np.sin(6*np.pi*x[0] + 2*np.pi/self.dimension) - np.sign(0.5*(1-x[0]) - np.power(1-x[0], 2)) * \
+        np.sqrt(np.abs(0.5 * (1-x[0]) - np.power(1-x[0], 2))) >= 0
+
+        c2 = x[3] - 0.8*x[0]*np.sin(6*np.pi*x[0] + 4*np.pi/self.dimension) - np.sign(0.25 * np.sqrt(1-x[0]) - 0.5*(1-x[0])) * \
+        np.sqrt(np.abs(0.25 * np.sqrt(1-x[0]) - 0.5*(1-x[0]))) >= 0  
+
+        return c1 and c2
+    
+    def fitness(self, individual):
+        return np.array([self.f1(individual), self.f2(individual)])
+    
     def create_search_space(self):
         search_space = np.zeros((self.dimension, 2))
         search_space[0][0] = 0
@@ -91,6 +99,35 @@ class CF6:
             search_space[i][1] = 2
         return search_space
     
+    def plot_function(self):
+        population = np.zeros((10000, self.dimension))
+        f1 = np.zeros(10000)
+        f2 = np.zeros(10000)
+
+        for i in range(10000):
+            for j in range(self.dimension):
+                population[i][j] = np.random.uniform(self.search_space[j][0], self.search_space[j][1])
+                
+            f1[i] = self.f1(population[i])
+            f2[i] = self.f2(population[i])
+        
+        plt.scatter(f1, f2, color='blue')
+
     def plot_ideal_front(self):
-        pass
+
+        f1 = np.linspace(0, 1, 100)
+        f2 = np.zeros(100)
+
+        for i, x in enumerate(f1):
+            if x <= 0.5:
+                f2[i] = np.power(1-x, 2)
+            elif x <= 0.75:
+                f2[i] = 0.5*(1-x)
+            else:
+                f2[i] = 0.25 * np.sqrt(1-x)
+        
+        plt.scatter(f1, f2, color='blue')
+        plt.show()
+
+
 
