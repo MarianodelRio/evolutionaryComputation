@@ -10,13 +10,13 @@ import random as rd
 import pandas as pd
 from matplotlib import pyplot as plt
 
-from .evolutionary_operators import gaussian_mutation
+from .evolutionary_operators import gaussian_mutation, differential_evolution_crossover
 
 class EA:
 
     def __init__(self, problem, population_size,
                  generations, mutation_rate,
-                 neighborhood_size, SIG):
+                 neighborhood_size, SIG, F):
 
         # Parameters 
         self.problem = problem # Fitness function, search space and dimension
@@ -29,15 +29,20 @@ class EA:
         self.mutation_rate = mutation_rate
         self.neighborhood_size = neighborhood_size
         self.SIG = SIG
-        #self.historic = np.zeros((self.generations, self.N))
+        self.F = F
+        self.historic = np.zeros((self.generations, self.m + 1))
 
     def create_weight_vectors(self):
         weight_vectors = np.zeros((self.N, self.m))
         for i in range(self.N):
             for j in range(self.m):
-                weight_vectors[i][j] = i/(self.N - 1)
+                weight_vectors[i][j] = (i+1)/(self.N+1)
+        
+        for i in range(self.N):
+            weight_vectors[i][0] = weight_vectors[self.N - i - 1][1]
+
         return weight_vectors
-    
+
     def create_population(self):
         population = np.zeros((self.N, self.dimension))
         for i in range(self.N):
@@ -91,37 +96,56 @@ class EA:
                 self.population[j] = self.population[i]
                 self.neighborhood[i][j] = i
 
-    def reproduce_population(self, individual):
-        self.new_individual = gaussian_mutation(individual, self.problem.search_space, self.mutation_rate, self.SIG)
+    def reproduce_population(self, i, individual, individual1, individual2, individual3):
+        new_individual = differential_evolution_crossover([individual1, individual2, individual3], 
+                                                          self.problem.search_space, self.mutation_rate, self.F)
+        new_individual = gaussian_mutation(new_individual, self.problem.search_space, self.mutation_rate, self.SIG)
+        
+        if self.problem.g(new_individual, self.weight_vectors[i], self.reference_point) < self.problem.g(individual, self.weight_vectors[i], self.reference_point):
+            return new_individual
+        else:
+            return individual
     
     def iteration(self, i):
-        nearest_ind = self.population[self.neighborhood[i][0]]
-        self.reproduce_population(nearest_ind)
+        neigh1, neigh2, neigh3 = self.population[self.neighborhood[i][:3]]
+        ind = self.population[i]
+        self.population[i] = self.reproduce_population(i, ind, neigh1, neigh2, neigh3)
         self.evaluate_individual(i)
         self.update_reference_point(i)
         self.update_neighborhood(i)
     
     def run_algorithm(self):
         self.initialize()
-        #self.historic[0] = self.population
-        for j in range(1, self.generations+1):
+        row = self.fitness(self.get_best_individual()).tolist()
+        row = row + [0]
+        row = np.array(row)
+        self.historic[0] = row
+
+        for j in range(1, self.generations):
             if j % 10 == 0:
-                print("Generation: ", j, "Best fitness: ", self.problem.fitness(self.get_best_individual()))
+                print("Generation: ", j, "Best fitness: ", self.fitness(self.get_best_individual()))
             for i in range(self.N):
                 self.iteration(i)
 
-            #self.historic[i] = self.population
+            row = self.fitness(self.get_best_individual()).tolist()
+            row = row + [0]
+            row = np.array(row)
+            self.historic[j] = row
         
 
     def get_best_individual(self):
-        best_individual = self.population[np.argmin(self.fitness, axis=0)]
+        best_individual = self.population[0]
+        best_fitness = self.problem.g(best_individual, self.weight_vectors[0], self.reference_point)
+        for i in range(1, self.N):
+            current_fitness = self.problem.g(self.population[i], self.weight_vectors[i], self.reference_point)
+            if current_fitness < best_fitness:
+                best_fitness = current_fitness
+                best_individual = self.population[i]
         return best_individual
        
     def export_historic(self, name):
-        # Export historic of the population to csv file 
-        #df = pd.DataFrame(self.historic)
-        #df.to_csv(name, index=False)
-        pass
+        df = pd.DataFrame(self.historic)
+        df.to_csv(name, index=False)
 
     def plot_historic(self):
         # Plot population 

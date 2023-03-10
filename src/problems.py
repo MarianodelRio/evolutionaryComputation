@@ -35,7 +35,8 @@ class ZDT3:
         return search_space
     
     def g(self, individual, weight_vector, ref_point):
-        return weight_vector[np.argmax(self.fitness(individual) - ref_point)]
+        fitness = self.fitness(individual)
+        return np.max([weight_vector[i] * np.abs(fitness[i] - ref_point[i]) for i in range(self.num_functions)])
     
     def plot_ideal_front(self):
 
@@ -51,7 +52,7 @@ class ZDT3:
         f1 = np.zeros(100)
         f2 = np.zeros(100)
 
-        for i in range(1000):
+        for i in range(100):
             for j in range(self.dimension):
                 population[i][j] = np.random.uniform(self.search_space[j][0], self.search_space[j][1])
                 
@@ -62,11 +63,12 @@ class ZDT3:
 
 class CF6:
 
-    def __init__(self, dimension):
+    def __init__(self, dimension, cons_method='penalization'):
         self.name = 'CF6'
         self.dimension = dimension
         self.search_space = self.create_search_space()
         self.num_functions = 2
+        self.cons_method = cons_method
 
     def f1(self, x):
         j1 = [j for j in range(2, self.dimension) if j % 2 != 0]
@@ -89,6 +91,9 @@ class CF6:
     
     def fitness(self, individual):
         return np.array([self.f1(individual), self.f2(individual)])
+    
+    def g(self, individual, weight_vector, ref_point):
+        return weight_vector[np.argmax(self.fitness(individual) - ref_point)]
     
     def create_search_space(self):
         search_space = np.zeros((self.dimension, 2))
