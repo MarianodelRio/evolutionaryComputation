@@ -3,9 +3,8 @@
 ### Trabajo pendiente 
 
 
-- Implementar funcion cf6
-- Implementar nuevos operadores evolutivos 
-- Implementar primer método de restricciones
+- Implementar restricciones
 - Implementar funciones plot 
-- En historic guardar también fitness correspondiente a cada individuo
-- Implementar mejores operadores evolutivos
+- Probar distintos parámetros para convergencia en menos evaluaciones
+- Guardar datos para evaluar métricas 
+- Estudio estadístico de soluciones

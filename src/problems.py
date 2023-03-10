@@ -34,18 +34,17 @@ class ZDT3:
             search_space[i][1] = 1
         return search_space
     
-    def g(self, individual, weight_vector, ref_point):
-        fitness = self.fitness(individual)
-        return np.max([weight_vector[i] * np.abs(fitness[i] - ref_point[i]) for i in range(self.num_functions)])
+    def g(self, weight_vector, ref_point, fitness):
+        return np.max([weight_vector[j] * np.abs(fitness[j] - ref_point[j]) for j in range(self.num_functions)])
     
     def plot_ideal_front(self):
 
-        f1 = np.concatenate((np.linspace(0, 0.0830015349, 100), np.linspace(0.1822287280, 0.2577623634, 100) ,np.linspace(0.4093136748, 0.4538821041, 100), np.linspace(0.6183967944, 0.6525117038, 100), np.linspace(0.8233317983, 0.8518328654, 100)), axis=0)
+        f1 = np.concatenate((np.linspace(0, 0.0830015349, 20), np.linspace(0.1822287280, 0.2577623634, 20) ,np.linspace(0.4093136748, 0.4538821041, 20), np.linspace(0.6183967944, 0.6525117038, 20), np.linspace(0.8233317983, 0.8518328654, 20)), axis=0)
         
         f2 = 1 - np.sqrt(f1) - f1 * np.sin(10 * np.pi * f1)
 
-        plt.scatter(f1, f2, color='blue')
-        plt.show()
+        plt.scatter(f1, f2, color='blue', linewidths=1)
+        
     
     def plot_function(self):
         population = np.zeros((100, self.dimension))

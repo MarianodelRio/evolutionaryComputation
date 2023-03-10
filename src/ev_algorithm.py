@@ -9,7 +9,7 @@ import numpy as np
 import random as rd 
 import pandas as pd
 from matplotlib import pyplot as plt
-
+import time
 from .evolutionary_operators import gaussian_mutation, differential_evolution_crossover
 
 class EA:
@@ -89,11 +89,10 @@ class EA:
                 self.reference_point[i] = fy[i]
 
     def update_neighborhood(self, i):
+        gi = self.problem.g(self.fitness_values[i], self.weight_vectors[i], self.reference_point)
         for j in range(self.neighborhood_size):
-            gi = self.problem.g(self.population[i], self.weight_vectors[i], self.reference_point)
-            gj = self.problem.g(self.population[j], self.weight_vectors[i], self.reference_point)
+            gj = self.problem.g(self.fitness_values[j], self.weight_vectors[j], self.reference_point)
             if gi < gj:
-                self.population[j] = self.population[i]
                 self.neighborhood[i][j] = i
 
     def reproduce_population(self, i, individual, individual1, individual2, individual3):
@@ -101,7 +100,9 @@ class EA:
                                                           self.problem.search_space, self.mutation_rate, self.F)
         new_individual = gaussian_mutation(new_individual, self.problem.search_space, self.mutation_rate, self.SIG)
         
-        if self.problem.g(new_individual, self.weight_vectors[i], self.reference_point) < self.problem.g(individual, self.weight_vectors[i], self.reference_point):
+        new_fitness = self.problem.fitness(new_individual)
+        if self.problem.g(new_fitness, self.weight_vectors[i], self.reference_point) < self.problem.g(self.fitness_values[i], self.weight_vectors[i], self.reference_point):
+            self.fitness_values[i] = new_fitness
             return new_individual
         else:
             return individual
@@ -110,7 +111,6 @@ class EA:
         neigh1, neigh2, neigh3 = self.population[self.neighborhood[i][:3]]
         ind = self.population[i]
         self.population[i] = self.reproduce_population(i, ind, neigh1, neigh2, neigh3)
-        self.evaluate_individual(i)
         self.update_reference_point(i)
         self.update_neighborhood(i)
     
@@ -121,9 +121,24 @@ class EA:
         row = np.array(row)
         self.historic[0] = row
 
+        
         for j in range(1, self.generations):
-            if j % 10 == 0:
+            if j % 20 == 0:
                 print("Generation: ", j, "Best fitness: ", self.fitness(self.get_best_individual()))
+                
+                # Generate plot loop 
+                plt.cla()
+                plt.xlim(-0.10, 1.1)
+                plt.ylim(-2,4)
+                f1 = self.fitness_values[:, 0]
+                f2 = self.fitness_values[:, 1]
+                self.problem.plot_ideal_front()
+                plt.scatter(f1, f2, c='black', s=2)
+                plt.xlabel('f1')
+                plt.ylabel('f2')
+                plt.pause(0.0001)
+
+
             for i in range(self.N):
                 self.iteration(i)
 
@@ -154,6 +169,9 @@ class EA:
 
         plt.scatter(f1, f2, c='b')
         plt.show()
+        # Keep one second and close the plot
+        time.sleep(1)
+        plt.close()
         
     
     
