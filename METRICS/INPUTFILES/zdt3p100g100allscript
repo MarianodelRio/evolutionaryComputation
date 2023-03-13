@@ -1,0 +1,215 @@
+# Lee la primera columna del fichero de datos, obtiene el máximo y lo almacena en un fichero
+cat ./UNKNOWN/allpop100g100seed01.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref1_1.out
+cp ./tmp_zdt3p100g100/hvref1_1.out ./tmp_zdt3p100g100/hvrefp100g100_1.out
+# Lee la segunda columna del fichero de datos, obtiene el máximo y lo almacena en un fichero
+cat ./UNKNOWN/allpop100g100seed01.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref1_2.out
+cp ./tmp_zdt3p100g100/hvref1_2.out ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./UNKNOWN/allpop100g100seed02.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref2_1.out
+# Añade los nuevos datos al final del fichero anterior
+cat ./tmp_zdt3p100g100/hvref2_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./UNKNOWN/allpop100g100seed02.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref2_2.out
+cat ./tmp_zdt3p100g100/hvref2_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./UNKNOWN/allpop100g100seed03.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref3_1.out
+cat ./tmp_zdt3p100g100/hvref3_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./UNKNOWN/allpop100g100seed03.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref3_2.out
+cat ./tmp_zdt3p100g100/hvref3_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./UNKNOWN/allpop100g100seed04.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref4_1.out
+cat ./tmp_zdt3p100g100/hvref4_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./UNKNOWN/allpop100g100seed04.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref4_2.out
+cat ./tmp_zdt3p100g100/hvref4_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./UNKNOWN/allpop100g100seed05.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref5_1.out
+cat ./tmp_zdt3p100g100/hvref5_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./UNKNOWN/allpop100g100seed05.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref5_2.out
+cat ./tmp_zdt3p100g100/hvref5_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./UNKNOWN/allpop100g100seed06.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref6_1.out
+cat ./tmp_zdt3p100g100/hvref6_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./UNKNOWN/allpop100g100seed06.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref6_2.out
+cat ./tmp_zdt3p100g100/hvref6_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./UNKNOWN/allpop100g100seed07.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref7_1.out
+cat ./tmp_zdt3p100g100/hvref7_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./UNKNOWN/allpop100g100seed07.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref7_2.out
+cat ./tmp_zdt3p100g100/hvref7_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./UNKNOWN/allpop100g100seed08.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref8_1.out
+cat ./tmp_zdt3p100g100/hvref8_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./UNKNOWN/allpop100g100seed08.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref8_2.out
+cat ./tmp_zdt3p100g100/hvref8_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./UNKNOWN/allpop100g100seed09.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref9_1.out
+cat ./tmp_zdt3p100g100/hvref9_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./UNKNOWN/allpop100g100seed09.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref9_2.out
+cat ./tmp_zdt3p100g100/hvref9_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./UNKNOWN/allpop100g100seed10.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref10_1.out
+cat ./tmp_zdt3p100g100/hvref10_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./UNKNOWN/allpop100g100seed10.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref10_2.out
+cat ./tmp_zdt3p100g100/hvref10_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed01.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref11_1.out
+cat ./tmp_zdt3p100g100/hvref11_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed01.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref11_2.out
+cat ./tmp_zdt3p100g100/hvref11_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed02.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref12_1.out
+cat ./tmp_zdt3p100g100/hvref12_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed02.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref12_2.out
+cat ./tmp_zdt3p100g100/hvref12_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed03.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref13_1.out
+cat ./tmp_zdt3p100g100/hvref13_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed03.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref13_2.out
+cat ./tmp_zdt3p100g100/hvref13_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed04.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref14_1.out
+cat ./tmp_zdt3p100g100/hvref14_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed04.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref14_2.out
+cat ./tmp_zdt3p100g100/hvref14_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed05.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref15_1.out
+cat ./tmp_zdt3p100g100/hvref15_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed05.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref15_2.out
+cat ./tmp_zdt3p100g100/hvref15_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed06.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref16_1.out
+cat ./tmp_zdt3p100g100/hvref16_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed06.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref16_2.out
+cat ./tmp_zdt3p100g100/hvref16_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed07.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref17_1.out
+cat ./tmp_zdt3p100g100/hvref17_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed07.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref17_2.out
+cat ./tmp_zdt3p100g100/hvref17_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed08.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref18_1.out
+cat ./tmp_zdt3p100g100/hvref18_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed08.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref18_2.out
+cat ./tmp_zdt3p100g100/hvref18_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed09.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref19_1.out
+cat ./tmp_zdt3p100g100/hvref19_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed09.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref19_2.out
+cat ./tmp_zdt3p100g100/hvref19_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed099.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref20_1.out
+cat ./tmp_zdt3p100g100/hvref20_1.out >> ./tmp_zdt3p100g100/hvrefp100g100_1.out
+cat ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed099.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvref20_2.out
+cat ./tmp_zdt3p100g100/hvref20_2.out >> ./tmp_zdt3p100g100/hvrefp100g100_2.out
+# En este momento hvrefp100g100_1.out contiene el valor máximo del primer objetivo 
+# en cada una de las 20 ejecuciones y hvrefp100g100_2.out el del segundo objetivo
+# Calcula el valor máximo del primer objetivo y lo almacena en hvrefp100g100.out 
+cat ./tmp_zdt3p100g100/hvrefp100g100_1.out | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_zdt3p100g100/hvrefp100g100.out
+# Calcula el valor máximo del segundo objetivo y lo añade a hvrefp100g100.out 
+cat ./tmp_zdt3p100g100/hvrefp100g100_2.out | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_zdt3p100g100/hvrefp100g100.out
+# Ejecutamos metrics sobre cada fichero de datos con un fichero de control creado automáticamente
+cp ./UNKNOWN/allpop100g100seed01.out zdt3_all_popmp100g100.out
+# Copiamos el fichero de control a falta del punto de referencia 
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+# Añadimos al fichero de control el punto de referencia calculado anteriormente
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+# Ejecutamos metrics
+./metrics < zdt3p100g100stallref.in
+# Copiamos los ficheros de resultados con otro nombre por si se quieren usar después.
+cp hypervol.out ./tmp_zdt3p100g100/hypervol1.out
+cp spacing.out ./tmp_zdt3p100g100/spacing1.out
+cp ./UNKNOWN/allpop100g100seed02.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol2.out
+cp spacing.out ./tmp_zdt3p100g100/spacing2.out
+cp ./UNKNOWN/allpop100g100seed03.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol3.out
+cp spacing.out ./tmp_zdt3p100g100/spacing3.out
+cp ./UNKNOWN/allpop100g100seed04.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol4.out
+cp spacing.out ./tmp_zdt3p100g100/spacing4.out
+cp ./UNKNOWN/allpop100g100seed05.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol5.out
+cp spacing.out ./tmp_zdt3p100g100/spacing5.out
+cp ./UNKNOWN/allpop100g100seed06.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol6.out
+cp spacing.out ./tmp_zdt3p100g100/spacing6.out
+cp ./UNKNOWN/allpop100g100seed07.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol7.out
+cp spacing.out ./tmp_zdt3p100g100/spacing7.out
+cp ./UNKNOWN/allpop100g100seed08.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol8.out
+cp spacing.out ./tmp_zdt3p100g100/spacing8.out
+cp ./UNKNOWN/allpop100g100seed09.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol9.out
+cp spacing.out ./tmp_zdt3p100g100/spacing9.out
+cp ./UNKNOWN/allpop100g100seed10.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol10.out
+cp spacing.out ./tmp_zdt3p100g100/spacing10.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed01.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol11.out
+cp spacing.out ./tmp_zdt3p100g100/spacing11.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed02.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol12.out
+cp spacing.out ./tmp_zdt3p100g100/spacing12.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed03.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol13.out
+cp spacing.out ./tmp_zdt3p100g100/spacing13.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed04.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol14.out
+cp spacing.out ./tmp_zdt3p100g100/spacing14.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed05.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol15.out
+cp spacing.out ./tmp_zdt3p100g100/spacing15.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed06.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol16.out
+cp spacing.out ./tmp_zdt3p100g100/spacing16.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed07.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol17.out
+cp spacing.out ./tmp_zdt3p100g100/spacing17.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed08.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol18.out
+cp spacing.out ./tmp_zdt3p100g100/spacing18.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed09.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol19.out
+cp spacing.out ./tmp_zdt3p100g100/spacing19.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed099.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvrefp100g100.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol20.out
+cp spacing.out ./tmp_zdt3p100g100/spacing20.out
+

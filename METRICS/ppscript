@@ -1,0 +1,14 @@
+cat ./tmp_cf6_4d/hypervolp40g100_nsgaii_total.out | awk '{print $2;}' | awk '{total+=$1; count+=1} END {print total/count, count}' > ./tmp_cf6_4d/hvp40g100mean.out
+cat ./tmp_cf6_4d/hvp40g100mean.out | awk '{for (i=1; i<=$2; i++) print $1}' >./tmp_cf6_4d/hvp40g100meanl.out
+paste ./tmp_cf6_4d/hypervolp40g100_nsgaii_total.out ./tmp_cf6_4d/hvp40g100meanl.out | awk '{print $2,$3}' > ./tmp_cf6_4d/hvp40g100andmean.out 
+cat ./tmp_cf6_4d/hvp40g100andmean.out | awk '{print $1, "\t", $2, "\t", ($1-$2)*($1-$2)}' > ./tmp_cf6_4d/hvp40g100andmeansquare.out 
+cat ./tmp_cf6_4d/hvp40g100andmeansquare.out | awk '{print $3;}' | awk '{total+=$1; count+=1} END {print sqrt(total/(count-1))}' > ./tmp_cf6_4d/hvp40g100std.out 
+cat ./tmp_cf6_4d/hvp40g100mean.out | awk '{print "Configuration p40g100: Hypervolume mean: " $1}' 
+cat ./tmp_cf6_4d/hvp40g100std.out | awk '{print "Configuration p40g100: Hypervolume standard deviation: " $1}' 
+cat ./tmp_cf6_4d/spacingp40g100_nsgaii_total.out | awk '{print $2;}' | awk '{total+=$1; count+=1} END {print total/count, count}' > ./tmp_cf6_4d/spp40g100mean.out
+cat ./tmp_cf6_4d/spp40g100mean.out | awk '{for (i=1; i<=$2; i++) print $1}' >./tmp_cf6_4d/spp40g100meanl.out
+paste ./tmp_cf6_4d/spacingp40g100_nsgaii_total.out ./tmp_cf6_4d/spp40g100meanl.out | awk '{print $2,$3}' > ./tmp_cf6_4d/spp40g100andmean.out 
+cat ./tmp_cf6_4d/spp40g100andmean.out | awk '{print $1, "\t", $2, "\t", ($1-$2)*($1-$2)}' > ./tmp_cf6_4d/spp40g100andmeansquare.out 
+cat ./tmp_cf6_4d/spp40g100andmeansquare.out | awk '{print $3;}' | awk '{total+=$1; count+=1} END {print sqrt(total/(count-1))}' > ./tmp_cf6_4d/spp40g100std.out 
+cat ./tmp_cf6_4d/spp40g100mean.out | awk '{print "Configuration p40g100: Spacing mean: " $1}' 
+cat ./tmp_cf6_4d/spp40g100std.out | awk '{print "Configuration p40g100: Spacing standard deviation: " $1}' 

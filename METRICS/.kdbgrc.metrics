@@ -1,0 +1,92 @@
+[Breakpoint 0]
+Enabled=true
+File=metrics.c
+Line=655
+Temporary=false
+
+[Breakpoint 1]
+Enabled=true
+File=metrics.c
+Line=642
+Temporary=false
+
+[Breakpoint 10]
+Enabled=true
+File=metrics.c
+Line=654
+Temporary=false
+
+[Breakpoint 2]
+Enabled=true
+File=metrics.c
+Line=635
+Temporary=false
+
+[Breakpoint 3]
+Enabled=true
+File=metrics.c
+Line=648
+Temporary=false
+
+[Breakpoint 4]
+Enabled=true
+File=metrics.c
+Line=647
+Temporary=false
+
+[Breakpoint 5]
+Enabled=true
+File=metrics.c
+Line=649
+Temporary=false
+
+[Breakpoint 6]
+Enabled=true
+File=metrics.c
+Line=650
+Temporary=false
+
+[Breakpoint 7]
+Enabled=true
+File=metrics.c
+Line=651
+Temporary=false
+
+[Breakpoint 8]
+Enabled=true
+File=metrics.c
+Line=652
+Temporary=false
+
+[Breakpoint 9]
+Enabled=true
+File=metrics.c
+Line=653
+Temporary=false
+
+[General]
+DebuggerCmdStr=
+DriverName=GDB
+FileVersion=1
+OptionsSelected=
+ProgramArgs=
+TTYLevel=7
+WorkingDirectory=
+
+[Memory]
+ColumnWidths=80,0
+NumExprs=0
+
+[Watches]
+Expr0=popsizeA2
+Expr1=popsizeB2
+Expr10=popsizeBCS
+Expr11=popsizeACS
+Expr2=reference
+Expr3=reference[0]
+Expr4=reference[1]
+Expr5=reference[2]
+Expr6=ngen
+Expr7=popsizeA
+Expr8=popsizeB
+Expr9=i

@@ -24,7 +24,7 @@ class EA:
         self.m = self.problem.num_functions # Number of objectives
         self.fitness = self.problem.fitness
         self.dimension = self.problem.dimension 
-        self.fitness_values = np.zeros((self.N, self.m))
+        self.fitness_values = np.zeros((self.N, self.m + 1))
         self.generations = generations
         self.mutation_rate = mutation_rate
         self.neighborhood_size = neighborhood_size
@@ -116,20 +116,16 @@ class EA:
     
     def run_algorithm(self):
         self.initialize()
-        row = self.fitness(self.get_best_individual()).tolist()
-        row = row + [0]
-        row = np.array(row)
-        self.historic[0] = row
-
+        self.historic[0] = self.fitness(self.get_best_individual())
         
         for j in range(1, self.generations):
-            if j % 20 == 0:
+            if j % 10 == 0:
                 print("Generation: ", j, "Best fitness: ", self.fitness(self.get_best_individual()))
                 
                 # Generate plot loop 
                 plt.cla()
-                plt.xlim(-0.10, 1.1)
-                plt.ylim(-2,4)
+                plt.xlim(-0.10, 5.1)
+                plt.ylim(0,3)
                 f1 = self.fitness_values[:, 0]
                 f2 = self.fitness_values[:, 1]
                 self.problem.plot_ideal_front()
@@ -142,10 +138,7 @@ class EA:
             for i in range(self.N):
                 self.iteration(i)
 
-            row = self.fitness(self.get_best_individual()).tolist()
-            row = row + [0]
-            row = np.array(row)
-            self.historic[j] = row
+            self.historic[j] = self.fitness(self.get_best_individual())
         
 
     def get_best_individual(self):

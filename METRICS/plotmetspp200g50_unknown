@@ -1,0 +1,13 @@
+unset label
+set label 'Spacing' at graph 0.5,0.95 center 
+unset key
+plot './tmp_zdt3p200g50/spacing1.out' using 1:2 w l,\
+'./tmp_zdt3p200g50/spacing2.out' using 1:2 w l,\
+'./tmp_zdt3p200g50/spacing3.out' using 1:2 w l,\
+'./tmp_zdt3p200g50/spacing4.out' using 1:2 w l,\
+'./tmp_zdt3p200g50/spacing5.out' using 1:2 w l,\
+'./tmp_zdt3p200g50/spacing6.out' using 1:2 w l,\
+'./tmp_zdt3p200g50/spacing7.out' using 1:2 w l,\
+'./tmp_zdt3p200g50/spacing8.out' using 1:2 w l,\
+'./tmp_zdt3p200g50/spacing9.out' using 1:2 w l,\
+'./tmp_zdt3p200g50/spacing10.out' using 1:2 w l

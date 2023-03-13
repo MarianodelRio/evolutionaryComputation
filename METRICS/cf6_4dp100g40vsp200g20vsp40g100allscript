@@ -1,0 +1,294 @@
+# Copia en un fichero los puntos que cumplen restricciones para calcular el  punto de referencia
+cat ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed01.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p100g40.out
+# Lee la primera columna del fichero de datos, obtiene el máximo y lo almacena en un fichero
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_cf6_4d/hvref_1.out
+# Lee la segunda columna del fichero de datos, obtiene el máximo y lo almacena en un fichero
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_cf6_4d/hvref_2.out
+# Lo mismo para el esto de ficheros de resultados
+cat ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed02.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p100g40.out
+# Añade los nuevos datos al final del fichero anterior
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed03.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p100g40.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed04.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p100g40.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed05.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p100g40.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed06.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p100g40.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed07.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p100g40.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed08.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p100g40.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed09.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p100g40.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed099.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p100g40.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p100g40.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed01.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p200g20.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed02.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p200g20.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed03.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p200g20.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed04.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p200g20.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed05.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p200g20.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed06.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p200g20.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed07.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p200g20.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed08.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p200g20.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed09.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p200g20.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed099.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p200g20.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p200g20.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed01.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p40g100.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed02.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p40g100.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed03.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p40g100.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed04.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p40g100.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed05.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p40g100.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed06.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p40g100.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed07.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p40g100.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed08.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p40g100.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed09.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p40g100.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+cat ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed099.out | awk '{if($3==0.0) print $1,"\t",$2;}'  > ./tmp_cf6_4d/p40g100.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $1;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_1.out
+cat ./tmp_cf6_4d/p40g100.out | awk '{print $2;}' | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref_2.out
+# En este momento hvref_1.out contiene el valor máximo del primer objetivo 
+# en cada una de las  ejecuciones y hvref_2.out el del segundo objetivo
+# Calcula el valor máximo del primer objetivo y lo almacena en hvref.out 
+cat ./tmp_cf6_4d/hvref_1.out | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' > ./tmp_cf6_4d/hvref.out
+# Calcula el valor máximo del segundo objetivo y lo añade a hvref.out 
+cat ./tmp_cf6_4d/hvref_2.out | awk '{if(max==""){max=$1}; if($1>max) {max=$1}} END {print max}' >> ./tmp_cf6_4d/hvref.out
+# Ejecutamos metrics sobre cada fichero de datos con un fichero de control creado automáticamente
+cp ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed01.out cf6_4d_all_popmp100g40.out 
+# Copiamos el fichero de control a falta del punto de referencia 
+cp  cf6_4dp100g40stallbasic.in  cf6_4dp100g40stallref.in
+# Añadimos al fichero de control el punto de referencia calculado anteriormente
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp100g40stallref.in
+# Ejecutamos metrics
+./metrics < cf6_4dp100g40stallref.in
+# Copiamos los ficheros de resultados con otro nombre por si se quieren usar después.
+cp hypervol.out ./tmp_cf6_4d/hypervola1.out
+cp spacing.out ./tmp_cf6_4d/spacinga1.out
+# Lo mismo para el resto de ficheros de resultados
+cp ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed02.out cf6_4d_all_popmp100g40.out 
+cp  cf6_4dp100g40stallbasic.in  cf6_4dp100g40stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp100g40stallref.in
+./metrics < cf6_4dp100g40stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervola2.out
+cp spacing.out ./tmp_cf6_4d/spacinga2.out
+cp ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed03.out cf6_4d_all_popmp100g40.out 
+cp  cf6_4dp100g40stallbasic.in  cf6_4dp100g40stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp100g40stallref.in
+./metrics < cf6_4dp100g40stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervola3.out
+cp spacing.out ./tmp_cf6_4d/spacinga3.out
+cp ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed04.out cf6_4d_all_popmp100g40.out 
+cp  cf6_4dp100g40stallbasic.in  cf6_4dp100g40stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp100g40stallref.in
+./metrics < cf6_4dp100g40stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervola4.out
+cp spacing.out ./tmp_cf6_4d/spacinga4.out
+cp ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed05.out cf6_4d_all_popmp100g40.out 
+cp  cf6_4dp100g40stallbasic.in  cf6_4dp100g40stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp100g40stallref.in
+./metrics < cf6_4dp100g40stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervola5.out
+cp spacing.out ./tmp_cf6_4d/spacinga5.out
+cp ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed06.out cf6_4d_all_popmp100g40.out 
+cp  cf6_4dp100g40stallbasic.in  cf6_4dp100g40stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp100g40stallref.in
+./metrics < cf6_4dp100g40stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervola6.out
+cp spacing.out ./tmp_cf6_4d/spacinga6.out
+cp ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed07.out cf6_4d_all_popmp100g40.out 
+cp  cf6_4dp100g40stallbasic.in  cf6_4dp100g40stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp100g40stallref.in
+./metrics < cf6_4dp100g40stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervola7.out
+cp spacing.out ./tmp_cf6_4d/spacinga7.out
+cp ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed08.out cf6_4d_all_popmp100g40.out 
+cp  cf6_4dp100g40stallbasic.in  cf6_4dp100g40stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp100g40stallref.in
+./metrics < cf6_4dp100g40stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervola8.out
+cp spacing.out ./tmp_cf6_4d/spacinga8.out
+cp ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed09.out cf6_4d_all_popmp100g40.out 
+cp  cf6_4dp100g40stallbasic.in  cf6_4dp100g40stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp100g40stallref.in
+./metrics < cf6_4dp100g40stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervola9.out
+cp spacing.out ./tmp_cf6_4d/spacinga9.out
+cp ./CF6_4DEVAL4000/P100G40/cf6_4d_all_popmp100g40_seed099.out cf6_4d_all_popmp100g40.out 
+cp  cf6_4dp100g40stallbasic.in  cf6_4dp100g40stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp100g40stallref.in
+./metrics < cf6_4dp100g40stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervola10.out
+cp spacing.out ./tmp_cf6_4d/spacinga10.out
+
+cp ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed01.out cf6_4d_all_popmp200g20.out 
+cp  cf6_4dp200g20stallbasic.in  cf6_4dp200g20stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp200g20stallref.in
+./metrics < cf6_4dp200g20stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolb1.out
+cp spacing.out ./tmp_cf6_4d/spacingb1.out
+cp ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed02.out cf6_4d_all_popmp200g20.out 
+cp  cf6_4dp200g20stallbasic.in  cf6_4dp200g20stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp200g20stallref.in
+./metrics < cf6_4dp200g20stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolb2.out
+cp spacing.out ./tmp_cf6_4d/spacingb2.out
+cp ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed03.out cf6_4d_all_popmp200g20.out 
+cp  cf6_4dp200g20stallbasic.in  cf6_4dp200g20stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp200g20stallref.in
+./metrics < cf6_4dp200g20stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolb3.out
+cp spacing.out ./tmp_cf6_4d/spacingb3.out
+cp ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed04.out cf6_4d_all_popmp200g20.out 
+cp  cf6_4dp200g20stallbasic.in  cf6_4dp200g20stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp200g20stallref.in
+./metrics < cf6_4dp200g20stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolb4.out
+cp spacing.out ./tmp_cf6_4d/spacingb4.out
+cp ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed05.out cf6_4d_all_popmp200g20.out 
+cp  cf6_4dp200g20stallbasic.in  cf6_4dp200g20stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp200g20stallref.in
+./metrics < cf6_4dp200g20stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolb5.out
+cp spacing.out ./tmp_cf6_4d/spacingb5.out
+cp ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed06.out cf6_4d_all_popmp200g20.out 
+cp  cf6_4dp200g20stallbasic.in  cf6_4dp200g20stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp200g20stallref.in
+./metrics < cf6_4dp200g20stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolb6.out
+cp spacing.out ./tmp_cf6_4d/spacingb6.out
+cp ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed07.out cf6_4d_all_popmp200g20.out 
+cp  cf6_4dp200g20stallbasic.in  cf6_4dp200g20stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp200g20stallref.in
+./metrics < cf6_4dp200g20stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolb7.out
+cp spacing.out ./tmp_cf6_4d/spacingb7.out
+cp ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed08.out cf6_4d_all_popmp200g20.out 
+cp  cf6_4dp200g20stallbasic.in  cf6_4dp200g20stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp200g20stallref.in
+./metrics < cf6_4dp200g20stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolb8.out
+cp spacing.out ./tmp_cf6_4d/spacingb8.out
+cp ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed09.out cf6_4d_all_popmp200g20.out 
+cp  cf6_4dp200g20stallbasic.in  cf6_4dp200g20stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp200g20stallref.in
+./metrics < cf6_4dp200g20stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolb9.out
+cp spacing.out ./tmp_cf6_4d/spacingb9.out
+cp ./CF6_4DEVAL4000/P200G20/cf6_4d_all_popmp200g20_seed099.out cf6_4d_all_popmp200g20.out 
+cp  cf6_4dp200g20stallbasic.in  cf6_4dp200g20stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp200g20stallref.in
+/metrics < cf6_4dp200g20stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolb10.out
+cp spacing.out ./tmp_cf6_4d/spacingb10.out
+
+cp ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed01.out cf6_4d_all_popmp40g100.out 
+# Copiamos el fichero de control a falta del punto de referencia 
+cp  cf6_4dp40g100stallbasic.in  cf6_4dp40g100stallref.in
+# Añadimos al fichero de control el punto de referencia calculado anteriormente
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp40g100stallref.in
+# Ejecutamos metrics
+./metrics < cf6_4dp40g100stallref.in
+# Copiamos los ficheros de resultados con otro nombre por si se quieren usar después.
+cp hypervol.out ./tmp_cf6_4d/hypervolc1.out
+cp spacing.out ./tmp_cf6_4d/spacingc1.out
+# Lo mismo para el resto de ficheros de resultados
+cp ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed02.out cf6_4d_all_popmp40g100.out 
+cp  cf6_4dp40g100stallbasic.in  cf6_4dp40g100stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp40g100stallref.in
+./metrics < cf6_4dp40g100stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolc2.out
+cp spacing.out ./tmp_cf6_4d/spacingc2.out
+cp ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed03.out cf6_4d_all_popmp40g100.out 
+cp  cf6_4dp40g100stallbasic.in  cf6_4dp40g100stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp40g100stallref.in
+./metrics < cf6_4dp40g100stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolc3.out
+cp spacing.out ./tmp_cf6_4d/spacingc3.out
+cp ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed04.out cf6_4d_all_popmp40g100.out 
+cp  cf6_4dp40g100stallbasic.in  cf6_4dp40g100stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp40g100stallref.in
+./metrics < cf6_4dp40g100stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolc4.out
+cp spacing.out ./tmp_cf6_4d/spacingc4.out
+cp ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed05.out cf6_4d_all_popmp40g100.out 
+cp  cf6_4dp40g100stallbasic.in  cf6_4dp40g100stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp40g100stallref.in
+./metrics < cf6_4dp40g100stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolc5.out
+cp spacing.out ./tmp_cf6_4d/spacingc5.out
+cp ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed06.out cf6_4d_all_popmp40g100.out 
+cp  cf6_4dp40g100stallbasic.in  cf6_4dp40g100stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp40g100stallref.in
+./metrics < cf6_4dp40g100stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolc6.out
+cp spacing.out ./tmp_cf6_4d/spacingc6.out
+cp ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed07.out cf6_4d_all_popmp40g100.out 
+cp  cf6_4dp40g100stallbasic.in  cf6_4dp40g100stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp40g100stallref.in
+./metrics < cf6_4dp40g100stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolc7.out
+cp spacing.out ./tmp_cf6_4d/spacingc7.out
+cp ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed08.out cf6_4d_all_popmp40g100.out 
+cp  cf6_4dp40g100stallbasic.in  cf6_4dp40g100stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp40g100stallref.in
+./metrics < cf6_4dp40g100stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolc8.out
+cp spacing.out ./tmp_cf6_4d/spacingc8.out
+cp ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed09.out cf6_4d_all_popmp40g100.out 
+cp  cf6_4dp40g100stallbasic.in  cf6_4dp40g100stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp40g100stallref.in
+./metrics < cf6_4dp40g100stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolc9.out
+cp spacing.out ./tmp_cf6_4d/spacingc9.out
+cp ./CF6_4DEVAL4000/P40G100/cf6_4d_all_popmp40g100_seed099.out cf6_4d_all_popmp40g100.out 
+cp  cf6_4dp40g100stallbasic.in  cf6_4dp40g100stallref.in
+cat ./tmp_cf6_4d/hvref.out >> cf6_4dp40g100stallref.in
+./metrics < cf6_4dp40g100stallref.in
+cp hypervol.out ./tmp_cf6_4d/hypervolc10.out
+cp spacing.out ./tmp_cf6_4d/spacingc10.out

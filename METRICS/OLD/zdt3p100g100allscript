@@ -1,0 +1,82 @@
+cp ./UNKNOWN/allpop100g100seed01.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref1.out
+cp ./tmp_zdt3p100g100/hvref1.out ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./UNKNOWN/allpop100g100seed02.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref2.out
+cat ./tmp_zdt3p100g100/hvref2.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./UNKNOWN/allpop100g100seed03.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref3.out
+cat ./tmp_zdt3p100g100/hvref3.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./UNKNOWN/allpop100g100seed04.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref4.out
+cat ./tmp_zdt3p100g100/hvref4.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./UNKNOWN/allpop100g100seed05.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref5.out
+cat ./tmp_zdt3p100g100/hvref5.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./UNKNOWN/allpop100g100seed06.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref6.out
+cat ./tmp_zdt3p100g100/hvref6.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./UNKNOWN/allpop100g100seed07.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref7.out
+cat ./tmp_zdt3p100g100/hvref7.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./UNKNOWN/allpop100g100seed08.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref8.out
+cat ./tmp_zdt3p100g100/hvref8.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./UNKNOWN/allpop100g100seed09.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref9.out
+cat ./tmp_zdt3p100g100/hvref9.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./UNKNOWN/allpop100g100seed10.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref10.out
+cat ./tmp_zdt3p100g100/hvref10.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed01.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref11.out
+cat ./tmp_zdt3p100g100/hvref11.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed02.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref12.out
+cat ./tmp_zdt3p100g100/hvref12.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed03.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref13.out
+cat ./tmp_zdt3p100g100/hvref13.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed04.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref14.out
+cat ./tmp_zdt3p100g100/hvref14.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed05.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref15.out
+cat ./tmp_zdt3p100g100/hvref15.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed06.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref16.out
+cat ./tmp_zdt3p100g100/hvref16.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed07.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref17.out
+cat ./tmp_zdt3p100g100/hvref17.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed08.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref18.out
+cat ./tmp_zdt3p100g100/hvref18.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed09.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref19.out
+cat ./tmp_zdt3p100g100/hvref19.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed099.out zdt3_all_popmp100g100.out
+./metrics < zdt3p100g100stall.in
+cp hvref.out ./tmp_zdt3p100g100/hvref20.out
+cat ./tmp_zdt3p100g100/hvref20.out >> ./tmp_zdt3p100g100/hvrefp100g100.out
+
+

@@ -1,0 +1,37 @@
+
+# Lee la metrica de cada ejecucion y calcula la media. Almacena en un fichero
+cat ./tmp_zdt3p100g100/hypervol_unknown_total.out | awk '{print $2;}' | awk '{total+=$1; count+=1} END {print total/count, count}' > ./tmp_zdt3p100g100/hv_unknown_mean.out
+# Replica la media tantas veces como ejecuciones
+cat ./tmp_zdt3p100g100/hv_unknown_mean.out | awk '{for (i=1; i<=$2; i++) print $1}' > ./tmp_zdt3p100g100/hv_unknown_meanl.out
+# Une en un fichero metrica y media
+paste ./tmp_zdt3p100g100/hypervol_unknown_total.out ./tmp_zdt3p100g100/hv_unknown_meanl.out | awk '{print $2,$3}' > ./tmp_zdt3p100g100/hv_unknown_andmean.out
+# Resta media y metrica y eleva al cuadrado
+cat ./tmp_zdt3p100g100/hv_unknown_andmean.out | awk '{print $1, "\t", $2, "\t", ($1-$2)*($1-$2)}' > ./tmp_zdt3p100g100/hv_unknown_andmeansquare.out
+# Suma, divide por numero de ejecuciones menos 1 y saca raiz cuadrado para obtejer desviacion estandar
+cat ./tmp_zdt3p100g100/hv_unknown_andmeansquare.out | awk '{print $3;}' | awk '{total+=$1; count+=1} END {print sqrt(total/(count-1))}' > ./tmp_zdt3p100g100/hv_unknownstd.out
+# Impime en pantalla media de la metrica
+cat ./tmp_zdt3p100g100/hv_unknown_mean.out | awk '{print "Configuration UNKNOWN p100g100: Hypervolume mean: " $1}'
+# Impime en pantalla desviacion estandar de la metrica
+cat ./tmp_zdt3p100g100/hv_unknownstd.out | awk '{print "Configuration UNKNOWN p100g100: Hypervolume standard deviation: " $1}'
+#Analogamente para las demas metricas
+cat ./tmp_zdt3p100g100/hypervol_nsgaii_total.out | awk '{print $2;}' | awk '{total+=$1; count+=1} END {print total/count, count}' > ./tmp_zdt3p100g100/hv_nsgaii_mean.out
+cat ./tmp_zdt3p100g100/hv_nsgaii_mean.out | awk '{for (i=1; i<=$2; i++) print $1}' > ./tmp_zdt3p100g100/hv_nsgaii_meanl.out
+paste ./tmp_zdt3p100g100/hypervol_nsgaii_total.out ./tmp_zdt3p100g100/hv_nsgaii_meanl.out | awk '{print $2,$3}' > ./tmp_zdt3p100g100/hv_nsgaii_andmean.out
+cat ./tmp_zdt3p100g100/hv_nsgaii_andmean.out | awk '{print $1, "\t", $2, "\t", ($1-$2)*($1-$2)}' > ./tmp_zdt3p100g100/hv_nsgaii_andmeansquare.out
+cat ./tmp_zdt3p100g100/hv_nsgaii_andmeansquare.out | awk '{print $3;}' | awk '{total+=$1; count+=1} END {print sqrt(total/(count-1))}' > ./tmp_zdt3p100g100/hv_nsgaiistd.out
+cat ./tmp_zdt3p100g100/hv_nsgaii_mean.out | awk '{print "Configuration NSGAII p100g100: Hypervolume mean: " $1}'
+cat ./tmp_zdt3p100g100/hv_nsgaiistd.out | awk '{print "Configuration NSGAII p100g100: Hypervolume standard deviation: " $1}'
+cat ./tmp_zdt3p100g100/spacing_unknown_total.out | awk '{print $2;}' | awk '{total+=$1; count+=1} END {print total/count, count}' > ./tmp_zdt3p100g100/sp_UNKNOWN_mean.out
+cat ./tmp_zdt3p100g100/sp_UNKNOWN_mean.out | awk '{for (i=1; i<=$2; i++) print $1}' > ./tmp_zdt3p100g100/sp_UNKNOWN_meanl.out
+paste ./tmp_zdt3p100g100/spacing_unknown_total.out ./tmp_zdt3p100g100/sp_UNKNOWN_meanl.out | awk '{print $2,$3}' > ./tmp_zdt3p100g100/sp_UNKNOWN_andmean.out
+cat ./tmp_zdt3p100g100/sp_UNKNOWN_andmean.out | awk '{print $1, "\t", $2, "\t", ($1-$2)*($1-$2)}' > ./tmp_zdt3p100g100/sp_UNKNOWN_andmeansquare.out
+cat ./tmp_zdt3p100g100/sp_UNKNOWN_andmeansquare.out | awk '{print $3;}' | awk '{total+=$1; count+=1} END {print sqrt(total/(count-1))}' > ./tmp_zdt3p100g100/sp_UNKNOWNstd.out
+cat ./tmp_zdt3p100g100/sp_UNKNOWN_mean.out | awk '{print "Configuration UNKNOWN p100g100: Spacing mean: " $1}'
+cat ./tmp_zdt3p100g100/sp_UNKNOWNstd.out | awk '{print "Configuration UNKNOWN p100g100: Spacing standard deviation: " $1}'
+cat ./tmp_zdt3p100g100/spacing_nsgaii_total.out | awk '{print $2;}' | awk '{total+=$1; count+=1} END {print total/count, count}' > ./tmp_zdt3p100g100/sp_nsgaii_mean.out
+cat ./tmp_zdt3p100g100/sp_nsgaii_mean.out | awk '{for (i=1; i<=$2; i++) print $1}' > ./tmp_zdt3p100g100/sp_nsgaii_meanl.out
+paste ./tmp_zdt3p100g100/spacing_nsgaii_total.out ./tmp_zdt3p100g100/sp_nsgaii_meanl.out | awk '{print $2,$3}' > ./tmp_zdt3p100g100/sp_nsgaii_andmean.out
+cat ./tmp_zdt3p100g100/sp_nsgaii_andmean.out | awk '{print $1, "\t", $2, "\t", ($1-$2)*($1-$2)}' > ./tmp_zdt3p100g100/sp_nsgaii_andmeansquare.out
+cat ./tmp_zdt3p100g100/sp_nsgaii_andmeansquare.out | awk '{print $3;}' | awk '{total+=$1; count+=1} END {print sqrt(total/(count-1))}' > ./tmp_zdt3p100g100/sp_nsgaiistd.out
+cat ./tmp_zdt3p100g100/sp_nsgaii_mean.out | awk '{print "Configuration NSGAII p100g100: Spacing mean: " $1}'
+cat ./tmp_zdt3p100g100/sp_nsgaiistd.out | awk '{print "Configuration NSGAII p100g100: Spacing standard deviation: " $1}'

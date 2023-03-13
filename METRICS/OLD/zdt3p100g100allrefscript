@@ -1,0 +1,120 @@
+cp ./UNKNOWN/allpop100g100seed01.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol1.out
+cp spacing.out ./tmp_zdt3p100g100/spacing1.out
+cp ./UNKNOWN/allpop100g100seed02.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol2.out
+cp spacing.out ./tmp_zdt3p100g100/spacing2.out
+cp ./UNKNOWN/allpop100g100seed03.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol3.out
+cp spacing.out ./tmp_zdt3p100g100/spacing3.out
+cp ./UNKNOWN/allpop100g100seed04.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol4.out
+cp spacing.out ./tmp_zdt3p100g100/spacing4.out
+cp ./UNKNOWN/allpop100g100seed05.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol5.out
+cp spacing.out ./tmp_zdt3p100g100/spacing5.out
+cp ./UNKNOWN/allpop100g100seed06.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol6.out
+cp spacing.out ./tmp_zdt3p100g100/spacing6.out
+cp ./UNKNOWN/allpop100g100seed07.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol7.out
+cp spacing.out ./tmp_zdt3p100g100/spacing7.out
+cp ./UNKNOWN/allpop100g100seed08.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol8.out
+cp spacing.out ./tmp_zdt3p100g100/spacing8.out
+cp ./UNKNOWN/allpop100g100seed09.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol9.out
+cp spacing.out ./tmp_zdt3p100g100/spacing9.out
+cp ./UNKNOWN/allpop100g100seed10.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol10.out
+cp spacing.out ./tmp_zdt3p100g100/spacing10.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed01.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol11.out
+cp spacing.out ./tmp_zdt3p100g100/spacing11.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed02.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol12.out
+cp spacing.out ./tmp_zdt3p100g100/spacing12.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed03.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol13.out
+cp spacing.out ./tmp_zdt3p100g100/spacing13.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed04.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol14.out
+cp spacing.out ./tmp_zdt3p100g100/spacing14.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed05.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol15.out
+cp spacing.out ./tmp_zdt3p100g100/spacing15.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed06.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol16.out
+cp spacing.out ./tmp_zdt3p100g100/spacing16.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed07.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol17.out
+cp spacing.out ./tmp_zdt3p100g100/spacing17.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed08.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol18.out
+cp spacing.out ./tmp_zdt3p100g100/spacing18.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed09.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol19.out
+cp spacing.out ./tmp_zdt3p100g100/spacing19.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed099.out zdt3_all_popmp100g100.out
+cp  zdt3p100g100stallbasic.in  zdt3p100g100stallref.in
+cat ./tmp_zdt3p100g100/hvref.out >> zdt3p100g100stallref.in
+./metrics < zdt3p100g100stallref.in
+cp hypervol.out ./tmp_zdt3p100g100/hypervol20.out
+cp spacing.out ./tmp_zdt3p100g100/spacing20.out

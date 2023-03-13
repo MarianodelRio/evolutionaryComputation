@@ -1,0 +1,120 @@
+cp ./UNKNOWN/allpop200g50seed01.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol1.out
+cp spacing.out ./tmp_zdt3p200g50/spacing1.out
+cp ./UNKNOWN/allpop200g50seed02.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol2.out
+cp spacing.out ./tmp_zdt3p200g50/spacing2.out
+cp ./UNKNOWN/allpop200g50seed03.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol3.out
+cp spacing.out ./tmp_zdt3p200g50/spacing3.out
+cp ./UNKNOWN/allpop200g50seed04.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol4.out
+cp spacing.out ./tmp_zdt3p200g50/spacing4.out
+cp ./UNKNOWN/allpop200g50seed05.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol5.out
+cp spacing.out ./tmp_zdt3p200g50/spacing5.out
+cp ./UNKNOWN/allpop200g50seed06.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol6.out
+cp spacing.out ./tmp_zdt3p200g50/spacing6.out
+cp ./UNKNOWN/allpop200g50seed07.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol7.out
+cp spacing.out ./tmp_zdt3p200g50/spacing7.out
+cp ./UNKNOWN/allpop200g50seed08.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol8.out
+cp spacing.out ./tmp_zdt3p200g50/spacing8.out
+cp ./UNKNOWN/allpop200g50seed09.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol9.out
+cp spacing.out ./tmp_zdt3p200g50/spacing9.out
+cp ./UNKNOWN/allpop200g50seed10.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol10.out
+cp spacing.out ./tmp_zdt3p200g50/spacing10.out
+cp ./EVAL10000/P200G50/zdt3_all_popmp200g50_seed01.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol11.out
+cp spacing.out ./tmp_zdt3p200g50/spacing11.out
+cp ./EVAL10000/P200G50/zdt3_all_popmp200g50_seed02.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol12.out
+cp spacing.out ./tmp_zdt3p200g50/spacing12.out
+cp ./EVAL10000/P200G50/zdt3_all_popmp200g50_seed03.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol13.out
+cp spacing.out ./tmp_zdt3p200g50/spacing13.out
+cp ./EVAL10000/P200G50/zdt3_all_popmp200g50_seed04.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol14.out
+cp spacing.out ./tmp_zdt3p200g50/spacing14.out
+cp ./EVAL10000/P200G50/zdt3_all_popmp200g50_seed05.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol15.out
+cp spacing.out ./tmp_zdt3p200g50/spacing15.out
+cp ./EVAL10000/P200G50/zdt3_all_popmp200g50_seed06.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol16.out
+cp spacing.out ./tmp_zdt3p200g50/spacing16.out
+cp ./EVAL10000/P200G50/zdt3_all_popmp200g50_seed07.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol17.out
+cp spacing.out ./tmp_zdt3p200g50/spacing17.out
+cp ./EVAL10000/P200G50/zdt3_all_popmp200g50_seed08.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol18.out
+cp spacing.out ./tmp_zdt3p200g50/spacing18.out
+cp ./EVAL10000/P200G50/zdt3_all_popmp200g50_seed09.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol19.out
+cp spacing.out ./tmp_zdt3p200g50/spacing19.out
+cp ./EVAL10000/P200G50/zdt3_all_popmp200g50_seed099.out zdt3_all_popmp200g50.out
+cp  zdt3p200g50stallbasic.in  zdt3p200g50stallref.in
+cat ./tmp_zdt3p200g50/hvref.out >> zdt3p200g50stallref.in
+./metrics < zdt3p200g50stallref.in
+cp hypervol.out ./tmp_zdt3p200g50/hypervol20.out
+cp spacing.out ./tmp_zdt3p200g50/spacing20.out

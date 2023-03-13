@@ -1,0 +1,32 @@
+cp ./UNKNOWN/allpop100g100seed01.out zdt3_all_popmp100g100_unknown.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed01.out zdt3_all_popmp100g100_nsgaii.out
+./metrics < zdt3p100g100stallCS.in
+cp ./UNKNOWN/allpop100g100seed02.out zdt3_all_popmp100g100_unknown.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed02.out zdt3_all_popmp100g100_nsgaii.out
+./metrics < zdt3p100g100stallCS.in
+cp ./UNKNOWN/allpop100g100seed03.out zdt3_all_popmp100g100_unknown.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed03.out zdt3_all_popmp100g100_nsgaii.out
+./metrics < zdt3p100g100stallCS.in
+cp ./UNKNOWN/allpop100g100seed04.out zdt3_all_popmp100g100_unknown.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed04.out zdt3_all_popmp100g100_nsgaii.out
+./metrics < zdt3p100g100stallCS.in
+cp ./UNKNOWN/allpop100g100seed05.out zdt3_all_popmp100g100_unknown.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed05.out zdt3_all_popmp100g100_nsgaii.out
+./metrics < zdt3p100g100stallCS.in
+cp ./UNKNOWN/allpop100g100seed06.out zdt3_all_popmp100g100_unknown.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed06.out zdt3_all_popmp100g100_nsgaii.out
+./metrics < zdt3p100g100stallCS.in
+cp ./UNKNOWN/allpop100g100seed07.out zdt3_all_popmp100g100_unknown.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed07.out zdt3_all_popmp100g100_nsgaii.out
+./metrics < zdt3p100g100stallCS.in
+cp ./UNKNOWN/allpop100g100seed08.out zdt3_all_popmp100g100_unknown.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed08.out zdt3_all_popmp100g100_nsgaii.out
+./metrics < zdt3p100g100stallCS.in
+cp ./UNKNOWN/allpop100g100seed09.out zdt3_all_popmp100g100_unknown.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed09.out zdt3_all_popmp100g100_nsgaii.out
+./metrics < zdt3p100g100stallCS.in
+cp ./UNKNOWN/allpop100g100seed10.out zdt3_all_popmp100g100_unknown.out
+cp ./EVAL10000/P100G100/zdt3_all_popmp100g100_seed099.out zdt3_all_popmp100g100_nsgaii.out
+./metrics < zdt3p100g100stallCS.in
+
+
