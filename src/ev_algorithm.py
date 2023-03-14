@@ -67,7 +67,7 @@ class EA:
     def evaluate_population(self):
         for i in range(self.N):
             self.evaluate_individual(i)
-
+    
     def create_reference_point(self):
         reference_point = np.zeros(self.m)
         for i in range(self.m):
@@ -82,37 +82,37 @@ class EA:
         self.evaluate_population()
         self.reference_point = self.create_reference_point()
 
-    def update_reference_point(self, i):
-        fy = self.fitness_values[i]
+    def update_reference_point(self, new_fitness):
+        fy = new_fitness
         for i in range(len(self.reference_point)):
             if fy[i] < self.reference_point[i]:
                 self.reference_point[i] = fy[i]
 
-    def update_neighborhood(self, i):
-        gi = self.problem.g(self.fitness_values[i], self.weight_vectors[i], self.reference_point)
+    def update_neighborhood(self, i, new_individual, new_fitness):
+        
         for j in range(self.neighborhood_size):
-            gj = self.problem.g(self.fitness_values[j], self.weight_vectors[j], self.reference_point)
-            if gi < gj:
-                self.neighborhood[i][j] = i
+            index_neigh = self.neighborhood[i][j]
+            gn = self.problem.g(new_fitness, self.weight_vectors[index_neigh], self.reference_point)           
+            gj = self.problem.g(self.fitness_values[index_neigh], self.weight_vectors[index_neigh], self.reference_point)
 
-    def reproduce_population(self, i, individual, individual1, individual2, individual3):
+            if gn < gj:
+                self.population[index_neigh] = new_individual
+                self.fitness_values[index_neigh] = new_fitness
+
+
+    def reproduce_population(self, individual1, individual2, individual3):
         new_individual = differential_evolution_crossover([individual1, individual2, individual3], 
                                                           self.problem.search_space, self.mutation_rate, self.F)
         new_individual = gaussian_mutation(new_individual, self.problem.search_space, self.mutation_rate, self.SIG)
         
         new_fitness = self.problem.fitness(new_individual)
-        if self.problem.g(new_fitness, self.weight_vectors[i], self.reference_point) < self.problem.g(self.fitness_values[i], self.weight_vectors[i], self.reference_point):
-            self.fitness_values[i] = new_fitness
-            return new_individual
-        else:
-            return individual
+        return new_individual, new_fitness
     
     def iteration(self, i):
         neigh1, neigh2, neigh3 = self.population[self.neighborhood[i][:3]]
-        ind = self.population[i]
-        self.population[i] = self.reproduce_population(i, ind, neigh1, neigh2, neigh3)
-        self.update_reference_point(i)
-        self.update_neighborhood(i)
+        new_individual, new_fitness = self.reproduce_population(neigh1, neigh2, neigh3)
+        self.update_reference_point(new_fitness)
+        self.update_neighborhood(i, new_individual, new_fitness)
     
     def run_algorithm(self):
         self.initialize()
@@ -142,16 +142,6 @@ class EA:
             for k in range(self.N):
                 self.historic[k*j] = self.fitness_values[k]
         
-
-    def get_best_individual(self):
-        best_individual = self.population[0]
-        best_fitness = self.problem.g(best_individual, self.weight_vectors[0], self.reference_point)
-        for i in range(1, self.N):
-            current_fitness = self.problem.g(self.population[i], self.weight_vectors[i], self.reference_point)
-            if current_fitness < best_fitness:
-                best_fitness = current_fitness
-                best_individual = self.population[i]
-        return best_individual
        
     def export_historic(self, name):
         np.savetxt(name, self.historic, fmt='%.6e', delimiter=' ', footer='')
