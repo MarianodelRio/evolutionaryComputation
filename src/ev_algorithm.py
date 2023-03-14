@@ -30,7 +30,7 @@ class EA:
         self.neighborhood_size = neighborhood_size
         self.SIG = SIG
         self.F = F
-        self.historic = np.zeros((self.generations, self.m + 1))
+        self.historic = np.zeros((self.generations * self.N, self.m + 1))
 
     def create_weight_vectors(self):
         weight_vectors = np.zeros((self.N, self.m))
@@ -116,16 +116,17 @@ class EA:
     
     def run_algorithm(self):
         self.initialize()
-        self.historic[0] = self.fitness(self.get_best_individual())
+        for k in range(self.N):
+            self.historic[k] = self.fitness_values[k]
         
         for j in range(1, self.generations):
             if j % 10 == 0:
-                print("Generation: ", j, "Best fitness: ", self.fitness(self.get_best_individual()))
+                print("Generation: ", j)
                 
                 # Generate plot loop 
                 plt.cla()
-                plt.xlim(-0.10, 5.1)
-                plt.ylim(0,3)
+                plt.xlim(-0.10, 1.1)
+                plt.ylim(-2,3)
                 f1 = self.fitness_values[:, 0]
                 f2 = self.fitness_values[:, 1]
                 self.problem.plot_ideal_front()
@@ -138,7 +139,8 @@ class EA:
             for i in range(self.N):
                 self.iteration(i)
 
-            self.historic[j] = self.fitness(self.get_best_individual())
+            for k in range(self.N):
+                self.historic[k*j] = self.fitness_values[k]
         
 
     def get_best_individual(self):
@@ -152,8 +154,7 @@ class EA:
         return best_individual
        
     def export_historic(self, name):
-        df = pd.DataFrame(self.historic)
-        df.to_csv(name, index=False)
+        np.savetxt(name, self.historic, fmt='%.6e', delimiter=' ', footer='')
 
     def plot_historic(self):
         # Plot population 
