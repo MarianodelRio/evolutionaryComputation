@@ -27,7 +27,6 @@ def differential_evolution_crossover(parents, search_space, F, mutation_rate):
     for i in range(len(parents[0])):
         if rd.random() < mutation_rate or i == delta:
             child[i] = parents[0][i] + F*(parents[1][i] - parents[2][i])
-            
             if child[i] < search_space[i][0]:
                 child[i] = search_space[i][0]
             elif child[i] > search_space[i][1]:

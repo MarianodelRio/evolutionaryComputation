@@ -71,7 +71,7 @@ class EA:
     def create_reference_point(self):
         reference_point = np.zeros(self.m)
         for i in range(self.m):
-            reference_point[i] = np.max(self.fitness_values[:, i])
+            reference_point[i] = np.min(self.fitness_values[:, i])
             # Max value of objective function i
         return reference_point
         
@@ -98,6 +98,8 @@ class EA:
             if gn < gj:
                 self.population[index_neigh] = new_individual
                 self.fitness_values[index_neigh] = new_fitness
+            else: 
+                self.fitness_values[index_neigh] = self.fitness(self.population[index_neigh])
 
 
     def reproduce_population(self, individual1, individual2, individual3):
@@ -109,7 +111,10 @@ class EA:
         return new_individual, new_fitness
     
     def iteration(self, i):
-        neigh1, neigh2, neigh3 = self.population[self.neighborhood[i][:3]]
+        i1, i2, i3 = np.random.choice(self.neighborhood[i], 3, replace=False)
+        neigh1 = self.population[i1]
+        neigh2 = self.population[i2]
+        neigh3 = self.population[i3]
         new_individual, new_fitness = self.reproduce_population(neigh1, neigh2, neigh3)
         self.update_reference_point(new_fitness)
         self.update_neighborhood(i, new_individual, new_fitness)
@@ -123,28 +128,28 @@ class EA:
             if j % 10 == 0:
                 print("Generation: ", j)
                 
-                # Generate plot loop 
-                plt.cla()
-                plt.xlim(-0.10, 1.1)
-                plt.ylim(-2,3)
-                f1 = self.fitness_values[:, 0]
-                f2 = self.fitness_values[:, 1]
-                self.problem.plot_ideal_front()
-                plt.scatter(f1, f2, c='black', s=2)
-                plt.xlabel('f1')
-                plt.ylabel('f2')
-                plt.pause(0.0001)
+            # Generate plot loop 
+            plt.cla()
+            plt.xlim(-0.10, 1.1)
+            plt.ylim(-2,3)
+            f1 = self.fitness_values[:, 0]
+            f2 = self.fitness_values[:, 1]
+            self.problem.plot_ideal_front()
+            plt.scatter(f1, f2, c='black', s=2)
+            plt.xlabel('f1')
+            plt.ylabel('f2')
+            plt.pause(0.0001)
 
 
             for i in range(self.N):
                 self.iteration(i)
 
-            for k in range(self.N):
-                self.historic[k*j] = self.fitness_values[k]
+            self.historic = np.vstack([self.historic, self.fitness_values])
         
        
     def export_historic(self, name):
-        np.savetxt(name, self.historic, fmt='%.6e', delimiter=' ', footer='')
+        with open(name, 'w') as f:
+            np.savetxt(name, self.historic, fmt='%.6e', delimiter=' ', footer='')
 
     def plot_historic(self):
         # Plot population 

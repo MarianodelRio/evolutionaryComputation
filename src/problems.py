@@ -10,12 +10,11 @@ from matplotlib import pyplot as plt
 
 class ZDT3:
 
-    def __init__(self, dimension, penalization_mode = None):
+    def __init__(self, dimension):
         self.name = 'ZDT3'
         self.dimension = dimension
         self.search_space = self.create_search_space()
         self.num_functions = 2
-        self.penalization_mode = penalization_mode
 
     def f1(self, x):
         return x[0]
@@ -107,11 +106,11 @@ class CF6:
             return c2
     
     def fitness(self, individual):
-        return np.array([self.f1(individual), self.f2(individual), (np.abs(self.c1(individual)) + np.abs(self.c2(individual)))])
+        return np.array([self.f1(individual), self.f2(individual), - (np.abs(self.c1(individual)) + np.abs(self.c2(individual)))])
     
     def g(self, weight_vector, ref_point, fitness):
         if self.cons_method == 'penalization':
-            return np.max([weight_vector[j] * np.abs(fitness[j] - ref_point[j]) for j in range(self.num_functions)]) + \
+            return np.max([weight_vector[j] * np.abs(fitness[j] - ref_point[j]) for j in range(self.num_functions)]) - \
             self.penalty_factor * fitness[-1]
         else: 
             return np.max([weight_vector[j] * np.abs(fitness[j] - ref_point[j]) for j in range(self.num_functions)])

@@ -34,17 +34,17 @@ def run_zdt3():
    population_size = [40, 80, 100, 40, 100, 200] 
    generations = [100, 50, 40, 250, 100, 50]
    dim = 30
-   mutation_rate = 0.8
-   neighborhood_size = 10
+   mutation_rate = 0.3
+   neighborhood_size = 0.3
    SIG = 20
    F = 0.5
    problem = 'zdt3'
-   name_file = ['data/AG/m_zdt3p40g100.out', 'data/AG/m_zdt3p80g50.out', 'data/AG/m_zdt3p100g40.out', 
+   name_file = ['m_zdt3p40g100.out', 'data/AG/m_zdt3p80g50.out', 'data/AG/m_zdt3p100g40.out', 
                 'data/AG/m_zdt3p40g250.out', 'data/AG/m_zdt3p100g100.out', 'data/AG/m_zdt3p200g50.out']
 
-   for i in range(6):
+   for i in range(1):
       execute(population_size[i], generations[i], dim, 
-              mutation_rate, neighborhood_size, SIG, F, problem, name_file[i])
+              mutation_rate, int(np.floor(neighborhood_size * population_size[i])), SIG, F, problem, name_file[i])
       
 
 def run_cf6():
@@ -54,7 +54,7 @@ def run_cf6():
    generations = [100, 50, 40, 250, 100, 50]
    dim = [4,16]
    mutation_rate = 0.8
-   neighborhood_size = 10
+   neighborhood_size = 0.3
    SIG = 20
    F = 0.5
    problem = 'cf6'
@@ -63,17 +63,17 @@ def run_cf6():
    name_file2 = ['data/AG/m_cf616dp40g100.out', 'data/AG/m_cf616dp80g50.out', 'data/AG/m_cf616dp100g40.out', 
                 'data/AG/m_cf616dp40g250.out', 'data/AG/m_cf616dp100g100.out', 'data/AG/m_cf616dp200g50.out']
 
-   for i in range(6):
+   for i in range(1):
       execute(population_size[i], generations[i], dim[0], 
-              mutation_rate, neighborhood_size, SIG, F, problem, name_file1[i])
+              mutation_rate, int(np.floor(neighborhood_size * population_size[i])), SIG, F, problem, name_file1[i])
    
-   for i in range(6):
+   for i in range(0):
       execute(population_size[i], generations[i], dim[1], 
-              mutation_rate, neighborhood_size, SIG, F, problem, name_file2[i])
+              mutation_rate, int(np.floor(neighborhood_size * population_size[i])), SIG, F, problem, name_file2[i])
       
 def main():
 
-   run_zdt3()
+   #run_zdt3()
    run_cf6()
 
 if __name__ == "__main__":
