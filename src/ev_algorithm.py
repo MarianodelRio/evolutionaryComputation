@@ -151,6 +151,12 @@ class EA:
         with open(name, 'w') as f:
             np.savetxt(name, self.historic, fmt='%.6e', delimiter=' ', footer='')
 
+    def export_historic_final(self, name):
+        # Take last generation of self.historic 
+        final_historic = self.historic[self.N * (self.generations - 1):]
+        with open(name, 'w') as f:
+            np.savetxt(name, final_historic, fmt='%.6e', delimiter=' ', footer='')
+
     def plot_historic(self):
         # Plot population 
         f1 = self.fitness_values[:, 0]
