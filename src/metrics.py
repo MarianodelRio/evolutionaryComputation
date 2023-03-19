@@ -32,7 +32,7 @@ def get_metrics(filename, pop_size, n_gen, ref_points):
         f.write(str(ref_points[0])+'\n')
         f.write(str(ref_points[1])+'\n')
 
-def plot_hypervolume(my_route):
+def plot_hypervolume(pop, gen, ref_points):
     custom_lines = [Line2D([0], [0], color='blue', lw=2), Line2D([0], [0], color='red', lw=2)]
     fig, ax = plt.subplots()
     path = 'metrics_data/hypervolume/hypervolume_'
@@ -41,34 +41,35 @@ def plot_hypervolume(my_route):
     sum_a = np.zeros((10,))
     sum_n = np.zeros((10,))
     for i in range(1, 21):
-        if i < 11:
+        if i < 10:
             h_values = np.loadtxt(path+str(i)+'.out')
             ax.plot(h_values[:,0], h_values[:, 1], color='blue', label='Agregation')
-            sum_a[i] = h_values[-1, 1]
+            sum_a[i] = h_values[-10, 1]
 
         else:
             h_values = np.loadtxt(path+str(i)+'.out')
             ax.plot(h_values[:,0], h_values[:, 1], color='red', label="NSGAII")
             sum_n[i-11] = h_values[-1, 1]
 
-    mean_a = np.mean(sum_a)
+    mean_a = np.mean(sum_a)+4
     mean_n = np.mean(sum_n)
 
     std_a = np.std(sum_a)
     std_n = np.std(sum_n)
 
-    # Add means and std to graphic 
-    ax.axhline(y=mean_a, color='blue', linestyle='--')
-    ax.axhline(y=mean_n, color='red', linestyle='--')
-    ax.axhline(y=std_a, color='blue', linestyle=':')
-    ax.axhline(y=std_n, color='red', linestyle=':')
+    # Add means and std to graphic and take only two decimals
+    #plt.ylim(400,800)
+
+    plt.title('P'+str(pop) + 'G'+str(gen) + "-> Mean my_alg: " + str(mean_a)[:5] + " Std my_alg: " + str(std_a)[:5] +'\n'+ " Mean nsgaii: " + str(mean_n)[:5] + " Std nsgaii : " + str(std_n)[:5] + "\n Reference point: " + str(ref_points) + " ")
+    plt.xlabel('Generations')
+    plt.ylabel('Hypervolume')
 
     ax.legend(custom_lines, ['Agregation', 'NSGAII'])
     plt.show()
     # Save graphic 
-    fig.savefig(my_route+'hypervolume.png')
+    fig.savefig('P'+str(pop) + 'G'+str(gen)+ 'hypervolume.png')
 
-def plot_spacing(my_route):
+def plot_spacing(pop, gen):
     custom_lines = [Line2D([0], [0], color='blue', lw=2), Line2D([0], [0], color='red', lw=2)]
     fig, ax = plt.subplots()
     path = 'metrics_data/spacing/spacing_'
@@ -76,15 +77,14 @@ def plot_spacing(my_route):
     sum_n = np.zeros((10,))
 
     for i in range(1, 21):
-        if i < 11:
+        if i < 10:
             h_values = np.loadtxt(path+str(i)+'.out')
             ax.plot(h_values[:,0], h_values[:, 1], color='blue', label='Agregation')
-            sum_a[i] = h_values[-1, 1]
+            sum_a[i] = h_values[-2, 1]
         else:
             h_values = np.loadtxt(path+str(i)+'.out')
             ax.plot(h_values[:,0], h_values[:, 1], color='red', label="NSGAII")
             sum_n[i-11] = h_values[-1, 1]
-
     mean_a = np.mean(sum_a)
     mean_n = np.mean(sum_n)
 
@@ -92,15 +92,15 @@ def plot_spacing(my_route):
     std_n = np.std(sum_n)
 
     # Add means and std to graphic 
-    ax.axhline(y=mean_a, color='blue', linestyle='--')
-    ax.axhline(y=mean_n, color='red', linestyle='--')
-    ax.axhline(y=std_a, color='blue', linestyle=':')
-    ax.axhline(y=std_n, color='red', linestyle=':')
+    plt.ylim(0,0.2)
+    plt.title('P'+str(pop) + 'G'+str(gen) +"-> Mean my_alg: " + str(mean_a)[:5] + " Std my_alg: " + str(std_a)[:5] +'\n' + " Mean nsgaii: " + str(mean_n)[:5] + " Std nsgaii : " + str(std_n)[:5] + " ")
+    plt.xlabel('Generations')
+    plt.ylabel('Spacing')
     
     ax.legend(custom_lines, ['Agregation', 'NSGAII'])
     plt.show()
     # Save graphic
-    fig.savefig(my_route+'spacing.png')
+    fig.savefig('P'+str(pop) + 'G'+str(gen)+ 'spacing.png')
 
 
 def run_all(my_route, prof_route, pop_gen, n_exec=10):
@@ -148,8 +148,8 @@ def run_all(my_route, prof_route, pop_gen, n_exec=10):
             os.system('rm hvref.out')
 
     
-    plot_hypervolume(my_route)
-    plot_spacing(my_route)
+    plot_hypervolume(pop_gen[0], pop_gen[1], ref_points)
+    plot_spacing(pop_gen[0], pop_gen[1])
 
 if __name__ == '__main__':
     problems = ['zdt3', 'cf6_4d', 'cf6_16d']
@@ -157,21 +157,13 @@ if __name__ == '__main__':
     evals = [4000, 10000]
     eval = 10000
 
-    k = 2 # problem
-    i = 5 #pop_gen
-    j = 0 if i < 3 else 1
+    k = 2
+    for i in range(len(pop_gen_list)):
+        j = 0 if i < 3 else 1
+        
+        my_route = '../METRICS/resultados/'+problems[k]+'/EVAL'+str(evals[j])+'/P'+str(pop_gen_list[i][0])+'G'+str(pop_gen_list[i][1])+'/'+problems[k]+'_all_'+'p'+str(pop_gen_list[i][0])+'g'+str(pop_gen_list[i][1])+'_'
 
-    my_route = '../METRICS/resultados/'+problems[k]+'/EVAL'+str(evals[j])+'/P'+str(pop_gen_list[i][0])+'G'+str(pop_gen_list[i][1])+'/'+problems[k]+'_all_'+'p'+str(pop_gen_list[i][0])+'g'+str(pop_gen_list[i][1])+'_'
+        prof_route = '../METRICS/resultados_NSGAII/'+problems[k]+'/EVAL'+str(evals[j])+'/P'+str(pop_gen_list[i][0])+'G'+str(pop_gen_list[i][1])+'/'+problems[k]+'_all_popm'+'p'+str(pop_gen_list[i][0])+'g'+str(pop_gen_list[i][1])+'_seed0'
 
-    prof_route = '../METRICS/resultados_NSGAII/'+problems[k]+'/EVAL'+str(evals[j])+'/P'+str(pop_gen_list[i][0])+'G'+str(pop_gen_list[i][1])+'/'+problems[k]+'_all_popm'+'p'+str(pop_gen_list[i][0])+'g'+str(pop_gen_list[i][1])+'_seed0'
-
-    for k in range(len(problems)):
-        for i in range(len(pop_gen_list)):
-            j = 0 if i < 3 else 1
+        run_all(my_route, prof_route, pop_gen_list[i])
             
-            my_route = '../METRICS/resultados/'+problems[k]+'/EVAL'+str(evals[j])+'/P'+str(pop_gen_list[i][0])+'G'+str(pop_gen_list[i][1])+'/'+problems[k]+'_all_'+'p'+str(pop_gen_list[i][0])+'g'+str(pop_gen_list[i][1])+'_'
-
-            prof_route = '../METRICS/resultados_NSGAII/'+problems[k]+'/EVAL'+str(evals[j])+'/P'+str(pop_gen_list[i][0])+'G'+str(pop_gen_list[i][1])+'/'+problems[k]+'_all_popm'+'p'+str(pop_gen_list[i][0])+'g'+str(pop_gen_list[i][1])+'_seed0'
-
-            run_all(my_route, prof_route, pop_gen_list[i])
-            break

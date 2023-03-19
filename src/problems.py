@@ -49,7 +49,7 @@ class ZDT3:
         
         f2 = 1 - np.sqrt(f1) - f1 * np.sin(10 * np.pi * f1)
 
-        plt.scatter(f1, f2, color='blue', linewidths=1)
+        plt.scatter(f1, f2, color='blue', s=2, label='Ideal Front')
         
     
     def plot_function(self):
@@ -64,7 +64,7 @@ class ZDT3:
             f1[i] = self.f1(population[i])
             f2[i] = self.f2(population[i])
         
-        plt.scatter(f1, f2, color='blue')
+        plt.scatter(f1, f2, color='blue', s=0.7)
 
 class CF6:
 
@@ -74,7 +74,7 @@ class CF6:
         self.search_space = self.create_search_space()
         self.num_functions = 2
         self.cons_method = cons_method
-        self.penalty_factor = 2
+        self.penalty_factor = 10
 
     def f1(self, x):
         j1 = [j for j in range(1, self.dimension) if j % 2 == 0]
@@ -137,7 +137,7 @@ class CF6:
             f1[i] = self.f1(population[i])
             f2[i] = self.f2(population[i])
         
-        plt.scatter(f1, f2, color='blue')
+        plt.scatter(f1, f2, color='blue', s=1)
 
     def plot_ideal_front(self):
 
@@ -152,7 +152,7 @@ class CF6:
             else:
                 f2[i] = 0.25 * np.sqrt(1-x)
         
-        plt.scatter(f1, f2, color='blue')
+        plt.scatter(f1, f2, color='blue', s=2, label='Ideal Front')
 
 
 

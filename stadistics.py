@@ -23,11 +23,17 @@ def plot_superposition(file_m, file_nsgaii, population_size, generations, proble
     problem.plot_ideal_front()
 
     # Draw data 
-    plt.plot(data_m[:,0], data_m[:,1], 'o', color='red', label='MY_ALGORITHM')
-    plt.plot(data_nsgaii[:,0], data_nsgaii[:,1], 'o', color='black', label='NSGAII')
+    plt.xlim(-0.10, 1.1)
+    plt.ylim(-2,2)
+    plt.xlabel('f1')
+    plt.ylabel('f2')
+    plt.title(problem.name + ' P'+str(population_size)+' G'+str(generations))
+    plt.scatter(data_m[:,0], data_m[:,1], color='red', label='MY_ALGORITHM', s=2)
+    plt.scatter(data_nsgaii[:,0], data_nsgaii[:,1], color='black', label='NSGAII', s=2)
     plt.legend()
     # Save graphic 
     plt.savefig('data/'+problem.name+'_'+str(population_size)+'_'+str(generations) + '_' + str(n_ex) +'.png')
+    plt.cla()
 
 
 def main():

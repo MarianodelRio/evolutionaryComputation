@@ -30,7 +30,7 @@ class EA:
         self.neighborhood_size = neighborhood_size
         self.SIG = SIG
         self.F = F
-        self.historic = np.zeros((self.generations * self.N, self.m + 1))
+        self.historic = np.empty((0, self.m+1))
 
     def create_weight_vectors(self):
         weight_vectors = np.zeros((self.N, self.m))
@@ -121,14 +121,13 @@ class EA:
     
     def run_algorithm(self):
         self.initialize()
-        for k in range(self.N):
-            self.historic[k] = self.fitness_values[k]
-        
         for j in range(1, self.generations):
+            
             if j % 10 == 0:
                 print("Generation: ", j)
-                
+            
             # Generate plot loop 
+            '''
             plt.cla()
             plt.xlim(-0.10, 1.1)
             plt.ylim(-2,3)
@@ -139,7 +138,7 @@ class EA:
             plt.xlabel('f1')
             plt.ylabel('f2')
             plt.pause(0.0001)
-
+            '''
 
             for i in range(self.N):
                 self.iteration(i)
@@ -149,24 +148,15 @@ class EA:
        
     def export_historic(self, name):
         with open(name, 'w') as f:
-            np.savetxt(name, self.historic, fmt='%.6e', delimiter=' ', footer='')
+            np.savetxt(f, self.historic, fmt='%.6e', delimiter='    ', footer='')
 
     def export_historic_final(self, name):
         # Take last generation of self.historic 
-        final_historic = self.historic[self.N * (self.generations - 1):]
+        final_historic = self.historic[self.N * (self.generations - 2):]
         with open(name, 'w') as f:
-            np.savetxt(name, final_historic, fmt='%.6e', delimiter=' ', footer='')
+            np.savetxt(f, final_historic, fmt='%.6e', delimiter='    ', footer='')
 
-    def plot_historic(self):
-        # Plot population 
-        f1 = self.fitness_values[:, 0]
-        f2 = self.fitness_values[:, 1]
-
-        plt.scatter(f1, f2, c='b')
-        plt.show()
-        # Keep one second and close the plot
-        time.sleep(1)
-        plt.close()
+    
         
     
     
